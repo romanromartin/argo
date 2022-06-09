@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+{% load static %}
+{% load i18n %}
+{% load index_tag %}
+
+{% block title %}
+  <title>Argo outdoor</title>
+{% endblock %}
+
+<link rel="icon" href="data:;base64,=">
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+
+
+</head>
+<body  >
+
+<!---------------------Header------------------------->
+<div class="header">
+  <div class="container">
+    <div class="row py-3 ">
+      <div class="col-4">
+        <a  href="{% url 'index' %}" >
+          <img class="mt-2" src="{% static 'images/logo.png' %}" alt="Logo" >
+        </a>
+      </div>
+      <div class="col-4 mt-4">
+        <a> г. Химки, ул. Рабочая, д.29</a>
+      </div>
+      <div class="col-4">
+        <a style="font-size: 130%;">
+          <img class="icon  " src="{% static 'images/phone.svg' %}" alt="Phone">
+          +7-916-321-09-09 <br>
+          <img class="icon" src="{% static 'images/phone.svg' %}" alt="Phone">
+          +7-495-991-70-91 <br>
+          <img class="icon " src="{% static 'images/mail.svg' %}" alt="Phone">
+          print-argo.msk@mail.ru
+
+        </a>
+      </div>
+
+    </div>
+    <div class="row pb-2">
+
+      <div class="col"> <a href="{% url 'about' %}"> О КОМПАНИИ </a> </div>
+      <div class="col"> <a class="dropdown-toggle mx-2 "  role="button"
+                                            id="drop-product" data-toggle="dropdown" aria-haspopup="false"
+                                            aria-expanded="true"> ПРОДУКЦИЯ </a>
+        <div class="dropdown-menu  "  aria-labelledby="drop-product" style="background: black;">
+                                        {% for pr in prod%}
+                                        <a class="dropdown-item" style="color: #fc6201;" href="{% url 'product' pr.id_product  %}"> {{pr.product}} </a>
+                                        {% endfor %}
+                                    </div>
+
+
+
+      </div>
+      <div class="col"> <a> СТАТЬИ </a> </div>
+      <div class="col"> <a href=" {% url 'price' %} "  > ПРАЙС </a> </div>
+      <div class="col"> <a  href="{% url 'portfolio' %}" > ПОРТФОЛИО </a> </div>
+      <div class="col"> <a href="{% url 'contacts'  %}" > КОНТАКТЫ </a> </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+{% block content %}  {% endblock %}
+
+
+<div style="background-color:black; width:100%; color: white;   " >
+  <div class="container">
+    <div class="row py-3 ">
+      <div class="col-4">
+        <a  href="{% url 'index' %}"  >
+          <img class="mt-3" src="{% static 'images/logo.png' %}" alt="Logo" >
+        </a>
+        </div>
+        <div class="col-4">
+        <a style="font-size: 130%;">
+          <img class="icon  " src="{% static 'images/phone.svg' %}" alt="Phone">
+          +7-916-321-09-09 <br>
+          <img class="icon" src="{% static 'images/phone.svg' %}" alt="Phone">
+          +7-495-991-70-91 <br>
+          <img class="icon " src="{% static 'images/mail.svg' %}" alt="Phone">
+          print-argo.msk@mail.ru
+        </a>
+      </div>
+      <div class="col-4">
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

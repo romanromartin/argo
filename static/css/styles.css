@@ -1,0 +1,134 @@
+body{
+    font-family: Roboto, Helvetica;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+
+a{
+    color:white;
+}
+
+a:hover{
+    color:#fc6201;
+}
+
+.header{
+ background: rgba(0, 0, 0, 1);
+ color: white;
+}
+
+.icon{
+    height:25px;
+    margin-right: 4px;
+}
+
+.top{
+    padding-top:100px;
+
+}
+.user{
+    border-radius: 10px;
+    width: 70%;
+
+    border:none;
+}
+.user:focus{
+    outline: none;
+}
+
+.phone{
+    border-radius: 10px;
+    border:none;
+}
+
+.phone:focus{
+    outline: none;
+}
+
+.user-submit{
+    border-radius: 10px;
+    width: 70%;
+    margin-top:16px;
+    border:none;
+    background-color:#fc6201;
+    margin-bottom:20px;
+    color:white;
+}
+
+.product-card:hover{
+    transform: scale(1.2, 1.2);
+    -webkit-transition: transform 1s;
+    z-index: 1000;
+
+}
+
+.portfolio-card:hover{
+    transform: scale(2, 2);
+    -webkit-transition: transform 0.5s;
+    z-index: 1000;
+
+}
+
+
+
+
+
+
+
+
+
+.acor-container .acor-body {
+    width:90%;
+    margin: 0 auto;
+    height: 0;
+    color: white;
+    box-sizing: border-box;
+    transition: color 0.5s, padding 0.5s;
+    overflow: hidden;
+
+}
+
+.acor-container label {
+    border-radius:7px;
+    cursor: pointer;
+    background-color:#fc6201;
+    display: block;
+    padding: 5px 5px;
+    width: 100%;
+    color: #BFE2FF;
+    font-weight: 300;
+    box-sizing: border-box;
+    z-index: 100;
+    margin: 0 0 5px;
+    transition: color .35s;
+}
+.acor-container label:hover {
+    color: #FFF;
+}
+.acor-container input{
+    display: none;
+}
+.acor-container label:before {
+    content: '\276F';
+    float: right;
+}
+.acor-container input:checked + label {
+
+    color: #FFF;
+
+}
+.acor-container input:checked + label:before {
+    transition: transform .35s;
+    transform: rotate(90deg);
+}
+.acor-container input:checked + label + .acor-body {
+    height: auto;
+    margin-top: -5px;
+    color: #000;
+}

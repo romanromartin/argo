@@ -1,0 +1,84 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% load i18n %}
+
+
+
+
+{% block content %}
+
+
+<div class="container" style="padding-top:20px;">
+    <div class="row">
+        <div class="col-12 " style="padding-bottom:20px;">
+            <a href="{% url 'index' %}" style="color:#fc6201;"> Главная </a>
+
+            <a> >  </a>
+            <a href="{% url 'all_products'  %}" style="color:#fc6201;" > Продукция </a>
+            <a> >  </a>
+            <a>  {{ parent.product }} </a>
+        </div>
+        <div class="col-12 text-center" style="padding-bottom:20px;"> <h3> {{ parent.product }}</h3></div>
+
+            <div class="col-3 acor-container " >
+                {% for pr in prod %}
+                    <input type="radio" name="acor" id="{{ pr.id_product }}"
+                    {% if  parent.id_product == pr.id_product %} checked="checked"  {% endif %}/>
+                    <label for="{{ pr.id_product }}">{{ pr.product }}</label>
+                    <div class="acor-body mt-1 " >
+                        {% for s in subprod %}
+                            {% if s.parent == pr %}
+                                <div class="mb-1 text-center" style="background-color: rgba(210, 210, 220, 0.8);  border-radius:7px; ">
+                                     <a href=" {% url 'detail' pr.id_product s.id %} " style="color:black;" >{{ s.subproduct }}</a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+
+
+            </div>
+
+
+        <div class="col-9 row">
+            {%  for sub in subproducts %}
+                <div class="col-4 product-card">
+                    <a href="{% url 'detail' parent.id_product sub.id  %}">
+                    <div class="card mb-4 " style="width: 16rem; border-radius: 10px;">
+                        <div style="position: relative;">
+                      <img class="card-img-top" src="/{{ sub.prw_subproduct}}" alt="Card image cap" style="border-radius: 10px;  ">
+                            <h5 class=" " style="font-size:120%; color:white; font-weight: bold;
+                                                    position:absolute; margin-bottom:0px;
+                                                bottom:5px; left: 5px;">  {{sub.subproduct}} </h5>
+                        </div>
+
+
+
+                        <div style=" position:absolute; top:0px; left:0px; background:#fc6201;; border-radius:10px; " >
+                         {% if sub.price == '0' %}
+                            <a class="" style="color:white; margin:3px; font-weight: bold;"> По запросу</a>
+                        {% else %}
+                            <a class="" style="color:white; margin:3px; font-weight: bold;" >от {{ sub.price }}  руб./{{sub.unit}}  </a>
+                        {% endif %}
+                        </div>
+
+                    </div>
+                    </a>
+            </div>
+        {% endfor%}
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<!-------Footer-->
+
+
+
+
+
+{% endblock %}

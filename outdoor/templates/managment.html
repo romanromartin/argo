@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% load i18n %}
+
+
+
+
+{% block content %}
+
+    <div class=" center "   >
+        <form method="post" >
+            {% csrf_token %}
+                <input   type="submit" name="category" value="Обновить разделы" >
+                <input   type="submit" name="products" value="Обновить продукцию" >
+                <input   type="submit" name="portfolio" value="Обновить портфолио" >
+
+
+        </form>
+
+
+
+
+
+    </div>
+
+
+{% endblock %}
+
+
