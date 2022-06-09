@@ -54,6 +54,7 @@ def price(request):
 def contacts(request):
     return render(request, 'contacts.html', context={'prod': products_all, 'subprod': subproduct_all})
 
+heroku = True
 
 
 def managment(request):
