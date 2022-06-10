@@ -13,7 +13,7 @@
             <a> >  Прайс-лист</a>
         </div>
         <div class="col-12 text-center" style="padding-bottom:20px;"> <h3> Прайс-лист</h3></div>
-        <div class="col-3 acor-container " >
+        <div class="col-lg-3 d-none d-lg-block  acor-container " >
             {% for pr in prod %}
                 <input type="radio" name="acor" id="{{ pr.id_product }}"  />
                 <label for="{{ pr.id_product }}">{{ pr.product }}</label>
@@ -28,7 +28,7 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="col-9 row" >
+        <div class="col-lg-9 col-md-12 row" >
             {% for pr in prod %}
                 <div class="col-12 text-center mb-1 py-1" style="border-radius:7px; background-color:#fc6201; color:white;"> <a> {{pr.product}} </a></div>
                 {% for s in subprod %}

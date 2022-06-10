@@ -22,7 +22,7 @@
             <h1> {{ subproduct.name}} </h1>
         </div>
 <!--        Navigation-->
-        <div class="col-3 acor-container ">
+        <div class="col-lg-3 d-none d-lg-block acor-container ">
             {% for pr in prod %}
                 <input type="radio" name="acor" id="{{ pr.id_product }}"  {% if  subproduct.parent.id_product == pr.id_product %} checked="checked"  {% endif %} />
                 <label for="{{ pr.id_product }}">{{ pr.product }}</label>
@@ -39,11 +39,22 @@
 
 
         </div>
-        <div class="col-5">
+        <div class="col-lg-5 col-md-12">
             <img  src="/{{ subproduct.prw_subproduct}}" alt="Card image cap" style="border-radius: 10px; width:100%">
 
         </div>
-        <div class="col-4">
+        <div class="col-md-12 d-lg-none">
+            {% if subproduct.price == '0' %}
+                <h2 class="mt-5"> По запросу</h2>
+            {% else %}
+                <h4 class="mt-4">Цена: от <span style="font-size:200%"> {{ subproduct.price }}</span>  руб./{{subproduct.unit}}  </h4>
+            {% endif %}
+
+
+        </div>
+
+
+        <div class="col-lg-4 col-md-12">
              <div class="col text-center " style="background-color: rgba(210, 210, 220, 0.8); border-radius: 10px;" >
                 <h3 class=" text-center " style="padding-top:20px;" > Оставить заявку <br> и получить скидку!</h3>
                 <form method="post"  >
@@ -67,12 +78,16 @@
             </div>
 
 
-
-            {% if subproduct.price == '0' %}
+            <div class="d-none d-lg-block" >
+                {% if subproduct.price == '0' %}
                 <h2 class="mt-5"> По запросу</h2>
             {% else %}
                 <h4 class="mt-4">Цена: от <span style="font-size:200%"> {{ subproduct.price }}</span>  руб./{{subproduct.unit}}  </h4>
             {% endif %}
+
+
+            </div>
+
 
 
 
