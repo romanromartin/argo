@@ -11,7 +11,11 @@
     <div class="container   ">
         <div class="row">
             <div class="col-12 d-none d-lg-block" style="margin-top:70px;"></div>
-            <div class="col-lg-6  col-md-12" style="margin-top:70px;">
+            <div class="col-lg-6  col-md-12" >
+                <div class="d-none d-sm-block" style="margin-top:70px;"></div>
+                <div  style="margin-top:30px;"></div>
+
+
                 <h1 class=" text-white">ПРОИЗВОДСТВО <br> НАРУЖНОЙ И <br> ИНТЕРЬЕРНОЙ РЕКЛАМЫ</h1>
                 <h5 class="text-white">Произведем и установим любую рекламную конструкцию в срок от 3 дней!</h5>
             </div>
@@ -86,9 +90,9 @@
         </div>
 
         {%  for pro in prod %}
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
                     <a href="{% url 'product' pro.id_product  %}">
-                    <div class="card mb-3 " style="width: 16rem; border-radius: 10px;">
+                    <div class="card mb-3 mx-auto card-index  " style=" border-radius: 10px;">
                       <img class="card-img-top" src=" /{{ pro.prw_product }}" alt="Card image cap" style="border-radius: 10px;">
 
                         <h5 class="card-title " style="font-size:120%; color:white; font-weight: bold;

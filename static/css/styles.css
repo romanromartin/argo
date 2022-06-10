@@ -71,6 +71,24 @@ a:hover{
     z-index: 1000;
 
 }
+.card-pr { width:16rem;
+    }
+
+.card-index{ width:16rem;
+    }
+@media (max-width: 767.98px) {
+  .card-pr{ width:24rem;
+    }
+  .card-index{ width:20rem;
+    }
+}
+
+@media (max-width: 1199.98px) {
+  .card-pr { width:20rem;
+    }
+  .card-index{ width:16rem;
+    }
+}
 
 
 

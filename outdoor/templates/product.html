@@ -35,24 +35,20 @@
                         {% endfor %}
                     </div>
                 {% endfor %}
-
-
         </div>
 
 
-        <div class="col-lg-9 col-md-12 row">
+        <div class="col-lg-9 col-md-12 row ">
             {%  for sub in subproducts %}
                 <div class="col-xl-4 col-lg-6 col-md-6 product-card ">
                     <a class="" href="{% url 'detail' parent.id_product sub.id  %}">
-                        <div class="card mb-4 " style="width: 16rem; border-radius: 10px;">
+                        <div class="card mb-4 mx-auto card-pr " style=" border-radius:10px;">
                             <div style="position: relative;">
                                   <img class="card-img-top" src="/{{ sub.prw_subproduct}}" alt="Card image cap" style="border-radius: 10px;  ">
                                         <h5 class=" " style="font-size:120%; color:white; font-weight: bold;
                                                                 position:absolute; margin-bottom:0px;
                                                             bottom:5px; left: 5px;">  {{sub.subproduct}} </h5>
                             </div>
-
-
 
                             <div style=" position:absolute; top:0px; left:0px; background:#fc6201;; border-radius:10px; " >
                              {% if sub.price == '0' %}
@@ -61,7 +57,6 @@
                                 <a class="" style="color:white; margin:3px; font-weight: bold;" >от {{ sub.price }}  руб./{{sub.unit}}  </a>
                             {% endif %}
                             </div>
-
                         </div>
                     </a>
             </div>
