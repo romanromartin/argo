@@ -40,7 +40,6 @@ def detail(request, id_product, id_subproduct):
             call.save()
     parent = Product.objects.get(id_product=id_product)
     sub = Subproduct.objects.get(id=id_subproduct)
-    print(sub)
     return render(request, 'product-detail.html',
                   context={'prod': products_all, 'subprod': subproduct_all, 'subproduct': sub, 'parent': parent,})
 
@@ -84,13 +83,6 @@ def managment(request):
                 print(file)
                 port = Portfolio(picture='static/portfolio/'+file, text='--')
                 port.save()
-
-
-
-
-
-
-
 
     return render(request, 'managment.html')
 
